@@ -1,120 +1,127 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Dosis', sans-serif;
-    font-size: 16px;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
 }
 
-main{
-    background-image: linear-gradient( 109.6deg,  rgba(62,161,219,1) 11.2%, rgba(93,52,236,1) 100.2% );
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+main {
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(62, 161, 219, 1) 11.2%,
+    rgba(93, 52, 236, 1) 100.2%
+  );
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-form{
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    margin-bottom: 15px;
+form {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin-bottom: 15px;
 }
 
-
-.mainCard{
-    width: 20vw;
-    border-radius: 25px;
-    background-color: #FFF;
-    padding: 25px;
+.mainCard {
+  width: 40vw;
+  border-radius: 25px;
+  background-color: #fff;
+  padding: 25px;
 }
 
-.title{
-    font-family: 'Dosis', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    margin-bottom: 15px;
+.title {
+  font-family: 'Dosis', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 15px;
 }
 
-
-.inputForm{
-    border: none;
-    padding: 10px;
-    border: 1px solid #eee;
-    outline: none;
-    width: 65%;
+.inputForm {
+  border: none;
+  padding: 10px;
+  border: 1px solid #eee;
+  outline: none;
+  width: 65%;
 }
 
-
-.inputForm::placeholder{
-    padding: 0px;
+.inputForm::placeholder {
+  padding: 0px;
 }
 
-
-.btnCreate{
-    padding: 10px 15px;
-    background-image: linear-gradient( 109.6deg,  rgba(62,161,219,1) 11.2%, rgba(93,52,236,1) 100.2% );
-    border: none;
-    color: #FFF; 
-    border-radius: 5px;
-    cursor: pointer;
+.btnCreate {
+  padding: 10px 15px;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(62, 161, 219, 1) 11.2%,
+    rgba(93, 52, 236, 1) 100.2%
+  );
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.cardsList{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.cardsList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  max-height: 60vh;
+  height: 60vh;
 }
 
-.card{
-    width: 90%;
-    padding: 15px;
-    box-shadow: 2px 4px 4px 4px rgba(71, 71, 71, 0.16);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-    margin: 5px 0px;
-    position: relative;
+.card {
+  width: 90%;
+  padding: 15px;
+  box-shadow: 2px 4px 4px 4px rgba(71, 71, 71, 0.16);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  margin: 5px 0px;
+  position: relative;
 }
 
-.task{
-    padding: 10px;
+.task {
+  padding: 10px;
 }
 
-.icon{
-    cursor: pointer;
+.icon {
+  cursor: pointer;
 }
 
-.completeIcon:hover{
-    color: rgba(62,161,219,1);
+.icon:hover {
+  color: rgba(62, 161, 219, 1);
 }
 
-.completedIcon{
-    color: rgba(62,161,219,1);
+.completeIcon {
+  color: rgba(62, 161, 219, 1);
 }
 
-.trashIcon:hover{
-    color: #F00;
+.trashIcon:hover {
+  color: #f00;
 }
 
-.deleteConfirmationPop{
-    position: relative;
-    background-color: rgba(255,255,255);
-    z-index: 99;
-    width: 100%;
-    top: -100px;
-    left: 0;
+.deleteConfirmationPop {
+  position: relative;
+  background-color: rgba(255, 255, 255);
+  z-index: 99;
+  width: 100%;
+  top: -100px;
+  left: 0;
 }
-.deleteSpace{
-    position: relative;
-    width: 30%;
+.deleteSpace {
+  position: relative;
+  width: 30%;
 }
 
-.noTasks{
-    font-size: 48px;
+.noTasks {
+  font-size: 48px;
 }
