@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO App</title>
+    <link rel="icon" type="image/png" href="./assets/rocket.svg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis&family=Open+Sans&family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="mainCard">
+        <div class="title"><img src="./assets/rocket.svg" /></div>
+        <div>
+          <form action="">
+            <input
+              type="text"
+              name="task"
+              placeholder="Nombre de la tarea"
+              class="inputForm"
+              autocomplete="off"
+            />
+            <button type="submit" class="btnCreate">
+              Agregar <i class="fas fa-plus-circle"></i>
+            </button>
+          </form>
+        </div>
+        <ul class="cardsList">
+          <li class="card">
+            <div>
+              <i class="fas fa-check-square completedIcon icon"></i>
+              <span class="task">Hacer curso de DOM</span>
+              <i class="fas fa-check-squareX"></i>
+            </div>
+            <i class="fas fa-trash-alt trashIcon icon"></i>
+          </li>
+          <li class="card">
+            <div>
+              <i class="fas fa-check-square completedIcon icon"></i>
+              <span class="task">Realizar certificación de DevOps</span>
+            </div>
+            <i class="fas fa-trash-alt trashIcon icon"></i>
+          </li>
+          <li class="card">
+            <div>
+              <i class="far fa-check-square completeIcon icon"></i>
+              <span class="task">Generar código</span>
+              <i class="fas fa-check-squareX"></i>
+            </div>
+            <i class="fas fa-trash-alt trashIcon icon"></i>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
