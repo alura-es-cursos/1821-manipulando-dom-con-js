@@ -1,30 +1,30 @@
-import checkComplete from './components/checkComplete.js';
-import deleteIcon from './components/deleteIcon.js';
+import checkComplete  from "./components/checkComplete.js";
+import deleteIcon from "./components/deleteIcon.js";
 
-const btn = document.querySelector('[data-form-btn]');
+( () =>{  //inmediately invoke function expretion IIFE
 
-const createTask = (evento) => {
-  evento.preventDefault();
-  const input = document.querySelector('[data-form-input]');
-  const value = input.value;
-  const list = document.querySelector('[data-list]');
-  const task = document.createElement('li');
-  task.classList.add('card');
-  input.value = '';
-  //backticks
-  const taskContent = document.createElement('div');
+const btn=document.querySelector("[data-form-btn]");
 
-  const titleTask = document.createElement('span');
-  titleTask.classList.add('task');
-  titleTask.innerText = value;
-  taskContent.appendChild(checkComplete());
-  taskContent.appendChild(titleTask);
-  // task.innerHTML = content;
+const createTask=  (evento) =>{
+    evento.preventDefault();
+    const input=document.querySelector("[data-form-input]");
+    const list=document.querySelector("[data-list]");
+    const value=input.value;
+    input.value='';
 
-  task.appendChild(taskContent);
-  task.appendChild(deleteIcon());
-  list.appendChild(task);
-};
+    const task=document.createElement("li");
+    task.classList.add("card");
+    task.appendChild(checkComplete());
+    const valueTask=document.createElement("span");
+    valueTask.classList.add("task");
+    valueTask.innerText=value;
+    task.appendChild(valueTask);
+    task.appendChild(deleteIcon());
 
-//Arrow functions o funciones anonimas
-btn.addEventListener('click', createTask);
+    list.appendChild(task);
+    //console.log(evento);
+}
+
+btn.addEventListener("click", createTask);
+
+}) ();
