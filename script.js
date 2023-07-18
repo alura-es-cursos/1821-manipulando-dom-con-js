@@ -9,6 +9,11 @@ btn.addEventListener('click', (evento) => { // Agrega un evento 'click' al botó
 });
 
 
+
+
+
+
+
 // import checkComplete from './components/checkComplete.js';
 // import deleteIcon from './components/deleteIcon.js';
 
