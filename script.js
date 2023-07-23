@@ -4,6 +4,7 @@ const btn = document.querySelector('[data-form-btn]');// Seleccionamos el botón
 console.log(btn); // Imprime en la consola el botón seleccionado.
 
 const createTask = () => {// Función para crear la tarea y agregarla a la lista
+
   event.preventDefault();// Previene el comportamiento predeterminado del evento 'click', que es recargar la página en este caso.
   const input = document.querySelector('[data-form-input]');// Seleccionamos el input que tiene el atributo 'data-form-input'.
   const value = input.value;
@@ -18,16 +19,16 @@ const createTask = () => {// Función para crear la tarea y agregarla a la lista
   titleTask.classList.add("task");
   titleTask.innerText = value;
   taskContent.appendChild(titleTask);
-  // const content = `
-  //   <i class="fas fa-trash-alt trashIcon icon"></i>
-  // `;
+  // taskContent.appendChild(deleteIcon());
   //task.innerHTML = content;// Agregamos el contenido a la tarea.
+
   task.appendChild(taskContent);
+  task.appendChild(deleteIcon());
   list.appendChild(task); // Agregamos la tarea a la lista.
 };
 
-
-btn.addEventListener('click', createTask);// Agregamos el evento 'click' al botón para llamar a la función 'createTask'.
+// Agregamos el evento 'click' al botón para llamar a la función 'createTask'.
+btn.addEventListener('click', createTask);
 
 // Función para obtener el ícono de "check".
 const checkComplete = () => {
@@ -45,6 +46,19 @@ const completeTask = () =>{
   elemet.classList.toggle("fas");
 }
 
+//funcion para añadir el boton de eliminar
+const deleteIcon = () =>{
+    const i = document.createElement("i");
+    i.classList.add("fas", "fa-trash-alt", "trashIcon", "icon");
+    i.addEventListener("click", deleteTask);
+    return i;
+}
+
+//evento de eliminar
+const deleteTask = () => {
+  const parent = event.target.parentElement;
+  parent.remove();
+}
 
 })();
 
