@@ -1,3 +1,5 @@
+( () => {
+
 const btn = document.querySelector('[data-form-btn]');// Seleccionamos el botón que tiene el atributo 'data-form-btn'
 console.log(btn); // Imprime en la consola el botón seleccionado.
 
@@ -9,8 +11,6 @@ const createTask = () => {// Función para crear la tarea y agregarla a la lista
    const task = document.createElement("li"); // Creamos un nuevo elemento <li> para representar la tarea.
   task.classList.add("card");
   input.value = ''; // Limpiamos el contenido del input después de obtener su valor.
-  // Creamos el contenido HTML para la tarea, incluyendo el ícono de "check" y el ícono de "trash".
-  console.log(checkComplete);
   let taskContent = document.createElement("div")
   taskContent.appendChild(checkComplete());
 
@@ -24,9 +24,8 @@ const createTask = () => {// Función para crear la tarea y agregarla a la lista
   //task.innerHTML = content;// Agregamos el contenido a la tarea.
   task.appendChild(taskContent);
   list.appendChild(task); // Agregamos la tarea a la lista.
-  console.log(content); // Imprime en la consola el contenido generado para la tarea.
 };
-console.log(btn);
+
 
 btn.addEventListener('click', createTask);// Agregamos el evento 'click' al botón para llamar a la función 'createTask'.
 
@@ -47,7 +46,7 @@ const completeTask = () =>{
 }
 
 
-
+})();
 
 
 
