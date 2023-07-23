@@ -1,13 +1,35 @@
-const btn = document.querySelector('[data-form-btn]'); // Selecciona el primer elemento del documento que tenga el atributo 'data-form-btn'.
-console.log(btn); // Imprime en la consola el elemento 'btn' seleccionado.
+const btn = document.querySelector('[data-form-btn]');// Seleccionamos el botón que tiene el atributo 'data-form-btn'
+console.log(btn); // Imprime en la consola el botón seleccionado.
+const createTask = () => {// Función para crear la tarea y agregarla a la lista
+  event.preventDefault();// Previene el comportamiento predeterminado del evento 'click', que es recargar la página en este caso.
+  const input = document.querySelector('[data-form-input]');// Seleccionamos el input que tiene el atributo 'data-form-input'.
+  const value = input.value;
+   const list = document.querySelector('[data-list]');// Seleccionamos la lista donde queremos agregar las tareas (esto asume que tienes un elemento con el atributo 'data-list').
+   const task = document.createElement("li"); // Creamos un nuevo elemento <li> para representar la tarea.
+  task.classList.add("card");
+  input.value = ''; // Limpiamos el contenido del input después de obtener su valor.
+  // Creamos el contenido HTML para la tarea, incluyendo el ícono de "check" y el ícono de "trash".
+  const content = `
+    <div>
+      ${checkComplete()} <!-- Llamamos a la función para obtener el ícono de "check" -->
+      <span class="task">${value}</span>
+    </div>
+    <i class="fas fa-trash-alt trashIcon icon"></i>
+  `;
+  task.innerHTML = content;// Agregamos el contenido a la tarea.
+  list.appendChild(task); // Agregamos la tarea a la lista.
+  console.log(content); // Imprime en la consola el contenido generado para la tarea.
+};
+btn.addEventListener('click', createTask);// Agregamos el evento 'click' al botón para llamar a la función 'createTask'.
 
-
-btn.addEventListener('click', (evento) => { // Agrega un evento 'click' al botón seleccionado.
-  evento.preventDefault(); // Previene el comportamiento predeterminado del evento 'click', que es recargar la página en este caso.
-  const input = document.querySelector('[data-form-input]'); // Selecciona el primer elemento del documento que tenga el atributo 'data-form-input'.
-  console.log(input.value); // Imprime en la consola el valor del elemento 'input' seleccionado.
-});
-
+// Función para obtener el ícono de "check".
+const checkComplete = () => {
+  const i = document.createElement('i');
+  i.classList.add('far');
+  i.classList.add('fa-check-square');
+  i.classList.add('icon');
+  return i;
+};
 
 
 
