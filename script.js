@@ -1,5 +1,6 @@
 const btn = document.querySelector('[data-form-btn]');// Seleccionamos el botón que tiene el atributo 'data-form-btn'
 console.log(btn); // Imprime en la consola el botón seleccionado.
+
 const createTask = () => {// Función para crear la tarea y agregarla a la lista
   event.preventDefault();// Previene el comportamiento predeterminado del evento 'click', que es recargar la página en este caso.
   const input = document.querySelector('[data-form-input]');// Seleccionamos el input que tiene el atributo 'data-form-input'.
@@ -9,27 +10,65 @@ const createTask = () => {// Función para crear la tarea y agregarla a la lista
   task.classList.add("card");
   input.value = ''; // Limpiamos el contenido del input después de obtener su valor.
   // Creamos el contenido HTML para la tarea, incluyendo el ícono de "check" y el ícono de "trash".
+  console.log(checkComplete);
+  let taskContent = document.createElement("div")
+  taskContent.appendChild(checkComplete());
+
+  const titleTask = document.createElement("span")
+  titleTask.classList.add("task");
+  titleTask.innerText = value;
+  taskContent.appendChild(titleTask);
   const content = `
-    <div>
-      ${checkComplete()} <!-- Llamamos a la función para obtener el ícono de "check" -->
-      <span class="task">${value}</span>
-    </div>
     <i class="fas fa-trash-alt trashIcon icon"></i>
   `;
-  task.innerHTML = content;// Agregamos el contenido a la tarea.
+  //task.innerHTML = content;// Agregamos el contenido a la tarea.
+  task.appendChild(taskContent);
   list.appendChild(task); // Agregamos la tarea a la lista.
   console.log(content); // Imprime en la consola el contenido generado para la tarea.
 };
+console.log(btn);
+
 btn.addEventListener('click', createTask);// Agregamos el evento 'click' al botón para llamar a la función 'createTask'.
 
 // Función para obtener el ícono de "check".
 const checkComplete = () => {
   const i = document.createElement('i');
-  i.classList.add('far');
-  i.classList.add('fa-check-square');
-  i.classList.add('icon');
+  i.classList.add('far', 'fa-check-square', 'icon');
+  i.addEventListener("click", completeTask);
   return i;
 };
+
+//funcion para cambiar el icono
+const completeTask = () =>{
+  const elemet = event.target;
+  elemet.classList.toggle("fas");
+  elemet.classList.toggle("completeIcon");
+  elemet.classList.toggle("fas");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
