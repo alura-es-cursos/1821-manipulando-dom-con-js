@@ -7,8 +7,8 @@ const createTask = () => {// Función para crear la tarea y agregarla a la lista
   event.preventDefault();// Previene el comportamiento predeterminado del evento 'click', que es recargar la página en este caso.
   const input = document.querySelector('[data-form-input]');// Seleccionamos el input que tiene el atributo 'data-form-input'.
   const value = input.value;
-   const list = document.querySelector('[data-list]');// Seleccionamos la lista donde queremos agregar las tareas (esto asume que tienes un elemento con el atributo 'data-list').
-   const task = document.createElement("li"); // Creamos un nuevo elemento <li> para representar la tarea.
+  const list = document.querySelector('[data-list]');// Seleccionamos la lista donde queremos agregar las tareas (esto asume que tienes un elemento con el atributo 'data-list').
+  const task = document.createElement("li"); // Creamos un nuevo elemento <li> para representar la tarea.
   task.classList.add("card");
   input.value = ''; // Limpiamos el contenido del input después de obtener su valor.
   let taskContent = document.createElement("div")
@@ -18,9 +18,9 @@ const createTask = () => {// Función para crear la tarea y agregarla a la lista
   titleTask.classList.add("task");
   titleTask.innerText = value;
   taskContent.appendChild(titleTask);
-  const content = `
-    <i class="fas fa-trash-alt trashIcon icon"></i>
-  `;
+  // const content = `
+  //   <i class="fas fa-trash-alt trashIcon icon"></i>
+  // `;
   //task.innerHTML = content;// Agregamos el contenido a la tarea.
   task.appendChild(taskContent);
   list.appendChild(task); // Agregamos la tarea a la lista.
