@@ -102,7 +102,13 @@ form {
 }
 
 .completeIcon {
-  color: rgba(62, 161, 219, 1);
+  color: rgb(2, 31, 128);
+  background: rgba(62, 161, 219, 1);
+  border-radius: 1.7px;
+}
+
+.completeIcon:hover{
+   color: black; 
 }
 
 .trashIcon:hover {
