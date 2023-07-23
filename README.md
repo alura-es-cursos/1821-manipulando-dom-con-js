@@ -3,3 +3,5 @@
 evento.preventDefault(); previene el comportamiento predeterminado del evento click
 
 appendChild: es una función que se utiliza para agregar un elemento como hijo dentro de otro elemento existente en el DOM (Documento Object Model).
+
+toggle: es una funcion verifica si existe o no la clase, si exite la quito, si no existe la pongo
